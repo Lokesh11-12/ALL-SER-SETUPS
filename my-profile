@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lokesh K | DevOps Engineer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f2027;
+      --secondary: #2c5364;
+      --accent: #00c6ff;
+      --bg-gradient: linear-gradient(135deg, #0f2027, #2c5364 100%);
+      --accent-gradient: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+      --white: #fff;
+      --card-bg: #181c25;
+      --shadow: 0 8px 40px 0 rgba(0,198,255,0.13), 0 3px 12px 0 rgba(44,83,100,0.11);
+    }
+    html,body{
+      margin:0;
+      padding:0;
+      min-height:100vh;
+      box-sizing:border-box;
+      background: var(--bg-gradient);
+      color:var(--white);
+    }
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      letter-spacing: 0.01em;
+      background-attachment: fixed;
+    }
+    .container {
+      max-width: 950px;
+      margin: 44px auto 40px auto;
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 44px 42px 36px 42px;
+      overflow: hidden;
+      border: 1px solid #1c2630;
+    }
+    .header {
+      display: flex;
+      align-items: stretch;
+      gap: 30px;
+      flex-wrap: wrap;
+      background: var(--accent-gradient);
+      border-radius: 18px;
+      padding: 28px 34px 24px 34px;
+      color: #fff;
+      margin-bottom: 38px;
+      box-shadow: 0 10px 40px #00c6ff22;
+      border-bottom: 4px solid var(--accent);
+      position: relative;
+      z-index: 2;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00c6ffcc 0%, #0072ffcc 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.6rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      color: #fff;
+      border: 6px solid #fff3;
+      box-shadow: 0 2px 16px #00c6ff33;
+      letter-spacing: 2px;
+      margin-bottom: 3px;
+      user-select: none;
+      transition: box-shadow 0.2s;
+      flex-shrink: 0;
+    }
+    .avatar:hover {
+      box-shadow: 0 6px 32px #00c6ff66;
+    }
+    .header-main {
+      flex: 1 1 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #fff;
+      margin: 0 0 8px 0;
+      letter-spacing: 2px;
+      text-shadow: 0 1px 18px #00c6ff44;
+    }
+    .contact-line {
+      font-size:1.07em;
+      color: #e0e0e0;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .social-links {
+      margin: 5px 0 13px 0;
+      display: flex;
+      gap: 18px;
+      font-size: 1.15em;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.18s, background 0.18s;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      border-radius: 7px;
+      padding: 6px 15px;
+      background: #fff2;
+      letter-spacing: 0.6px;
+      border: 1.5px solid #00c6ff60;
+    }
+    .social-links a:hover {
+      background: #00c6ff;
+      color: #fff;
+      border: 1.5px solid #fff;
+    }
+    .tagline {
+      font-size: 1.18em;
+      color: #eafcff;
+      margin-top: 2px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 14px #00c6ff2a;
+    }
+    .section {
+      margin-bottom: 46px;
+    }
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.34rem;
+      background: var(--accent-gradient);
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 28px 10px 18px;
+      display: inline-block;
+      font-weight: 900;
+      margin-bottom: 19px;
+      box-shadow: 0 4px 18px #00c6ff44;
+      letter-spacing: 1.2px;
+      border-left: 5px solid #fff;
+      text-transform: uppercase;
+    }
+    .edu-list, .personal-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .edu-item {
+      margin-bottom: 13px;
+      padding-bottom: 7px;
+      border-left: 4px solid var(--accent);
+      padding-left: 16px;
+      background: #1a2739cc;
+      border-radius: 8px;
+      color: #f4f4f4;
+      font-size: 1.06em;
+      box-shadow: 0 2px 8px #00c6ff1a;
+    }
+    .label {
+      font-weight: 700;
+      color: var(--accent);
+      font-family: 'Montserrat',sans-serif;
+      font-size: 1.03em;
+    }
+    .highlight {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 6px;
+      padding: 2px 11px;
+      font-weight: 700;
+      font-size: 1em;
+      margin-right: 9px;
+      display: inline-block;
+    }
+    /* Skills section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px 34px;
+      margin-bottom: 5px;
+    }
+    .skill-group {
+      background: linear-gradient(120deg,#102234 70%,#00c6ff11 130%);
+      border-radius: 10px;
+      padding: 20px 17px 13px 22px;
+      box-shadow: 0 1px 12px #00c6ff2c;
+      margin-bottom: 2px;
+      border: 2px solid #00c6ff44;
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+    }
+    .skill-logo {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      margin-top: 3px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 1px 3px #00c6ff33);
+      background: #fff3;
+      border-radius: 5px;
+      padding: 2px;
+    }
+    .skill-logo-large {
+      width: 34px;
+      height: 34px;
+      margin-top: 0;
+    }
+    .skill-title {
+      color: var(--accent);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.11em;
+      margin-bottom: 3px;
+      letter-spacing: 0.6px;
+    }
+    .skill-list {
+      margin: 7px 0 0 0;
+      padding: 0 0 0 17px;
+    }
+    .skill-list li { margin-bottom: 4px; }
+    /* Timeline for experience and projects */
+    .timeline {
+      border-left: 3.5px solid var(--accent);
+      margin-left: 10px;
+      padding-left: 30px;
+      position: relative;
+    }
+    .timeline-entry {
+      margin-bottom: 27px;
+      position: relative;
+    }
+    .timeline-entry:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-entry::before {
+      content: "";
+      position: absolute;
+      left: -36px;
+      top: 9px;
+      width: 19px;
+      height: 19px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 2px 10px #00c6ff33;
+    }
+    .timeline-title {
+      font-weight: 800;
+      color: var(--accent);
+      font-size: 1.15em;
+      margin-bottom: 2px;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+    .timeline-date {
+      font-size: 1em;
+      color: #b2ebf2;
+      margin-bottom: 7px;
+      font-weight: 500;
+    }
+    .timeline-desc, .timeline-list {
+      color: #e0f7fa;
+      font-size: 1em;
+    }
+    .timeline-list {
+      padding-left: 18px;
+      margin: 6px 0 0 0;
+    }
+    /* Personal details */
+    .personal-list {
+      background: linear-gradient(90deg, #162a40 60%, #00c6ff13 100%);
+      border-radius: 10px;
+      padding: 17px 35px 13px 25px;
+      box-shadow: 0 1px 10px #00c6ff1a;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      font-size: 1.08em;
+    }
+    .personal-list li {
+      margin-bottom: 8px;
+      min-width: 220px;
+      color: #e0f7fa;
+    }
+    .footer {
+      margin-top: 36px;
+      color: #b2ebf2;
+      text-align: center;
+      font-size: 1em;
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .terminal {
+      background: #181c25;
+      color: #00c6ff;
+      font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+      padding: 13px 22px;
+      border-radius: 8px;
+      margin: 8px 0 13px 0;
+      font-size: 1.08em;
+      box-shadow: 0 2px 11px #00c6ff1a;
+      line-height: 1.7;
+      border-left: 5px solid var(--accent);
+    }
+    @media (max-width: 700px) {
+      .container { padding: 13px 2vw 10px 2vw; }
+      .header { flex-direction: column; align-items: flex-start; padding: 16px 4vw 14px 4vw;}
+      .avatar { margin-bottom: 12px; }
+      .personal-list { flex-direction: column; padding: 11px 3vw; gap: 12px;}
+      .section-title { font-size: 1.12rem; padding: 7px 11px 7px 8px;}
+      .name{font-size:2rem;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="avatar" title="Lokesh K">LK</div>
+      <div class="header-main">
+        <div class="name">Lokesh K</div>
+        <div class="contact-line">
+          <span>📞 9398745315</span> &bull;
+          <a href="mailto:klokesh0916@gmail.com" style="color:#fff;text-decoration:underline;">klokesh0916@gmail.com</a>
+        </div>
+        <div class="social-links">
+          <a href="mailto:klokesh0916@gmail.com">📧 Email</a>
+          <a href="https://www.linkedin.com/in/lokesh0916" target="_blank">🔗 LinkedIn</a>
+          <a href="https://github.com/Lokesh11-12" target="_blank">💻 GitHub</a>
+        </div>
+        <div class="tagline">
+          🚀 DevOps Engineer | CI/CD | AWS | Infrastructure as Code | Monitoring & Automation Enthusiast
+        </div>
+      </div>
+    </div>
+    <!-- Objective Section -->
+    <div class="section">
+      <div class="section-title">Professional Objective</div>
+      <div class="terminal">
+        Energetic Computer Science Engineer with deep expertise in modern DevOps practices, CI/CD pipelines, and cloud automation. Seeking an entry-level DevOps Engineer position to architect, automate, and optimize cloud infrastructure and application delivery through collaborative problem-solving, continuous learning, and technical innovation.
+      </div>
+    </div>
+    <!-- Education Section -->
+    <div class="section">
+      <div class="section-title">Education</div>
+      <ul class="edu-list">
+        <li class="edu-item">
+          <span class="label">B.Tech in Computer Science</span><br>
+          Eluru College of Engineering and Technology, Eluru <br>
+          <span class="highlight">2020-2024</span> <b>CGPA:</b> 7.26/10
+        </li>
+        <li class="edu-item">
+          <span class="label">Intermediate (MPC)</span><br>
+          NRI Junior College, Eluru <br>
+          <span class="highlight">2018-2020</span> <b>CGPA:</b> 8.4/10
+        </li>
+      </ul>
+    </div>
+    <!-- Skills Section with Logos -->
+    <div class="section">
+      <div class="section-title">Technical Skills</div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-logo">
+          <div>
+            <div class="skill-title">Version Control</div>
+            <ul class="skill-list">
+              <li>Git, GitHub</li>
+            </ul>
+          </div>
+        </div>
+        <div class="skill-group">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" class="skill-logo">
+          <div>
+            <div class="skill-title">CI/CD</div>
+            <ul class="skill-list">
+              <li>Jenkins</li>
+            </ul>
+          </div>
+        </div>
+        <div class="skill-group">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible" class="skill-logo">
+          <div>
+            <div class="skill-title">Configuration Management</div>
+            <ul class="skill-list">
+              <li>Ansible</li>
+            </ul>
+          </div>
+        </div>
+        <div class="skill-group">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="Prometheus" class="skill-logo">
+          <div>
+            <div class="skill-title">Monitoring & Visualization</div>
+            <ul class="skill-list">
+              <li>Prometheus, Grafana</li>
+            </ul>
+          </div>
+        </div>
+        <div class="skill-group">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" class="skill-logo">
+          <div>
+            <div class="skill-title">Infrastructure as Code</div>
+            <ul class="skill-list">
+              <li>Terraform</li>
+            </ul>
+          </div>
+        </div>
+        <div class="skill-group">
+          <img src="https://logolook.net/wp-content/uploads/2023/09/Amazon-Web-Services-Logo.png" alt="AWS" class="skill-logo skill-logo-large">
+          <div>
+            <div class="skill-title">Cloud Platform</div>
+            <ul class="skill-list">
+              <li>AWS</li>
+            </ul>
+          </div>
+        </div>
+        <div class="skill-group">
+          <img src="https://logolook.net/wp-content/uploads/2023/09/Amazon-Web-Services-Logo.png" alt="AWS" class="skill-logo">
+          <div>
+            <div class="skill-title">AWS Services</div>
+            <ul class="skill-list">
+              <li>EC2, S3, IAM, RDS, ELB, ASG, VPC, Route 53, CloudWatch, CloudFormation</li>
+            </ul>
+          </div>
+        </div>
+        <div class="skill-group">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="skill-logo">
+          <div>
+            <div class="skill-title">Operating Systems</div>
+            <ul class="skill-list">
+              <li>Linux, Windows</li>
+            </ul>
+          </div>
+        </div>
+        <div class="skill-group">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="skill-logo">
+          <div>
+            <div class="skill-title">Front-End</div>
+            <ul class="skill-list">
+              <li>HTML, CSS, JavaScript</li>
+            </ul>
+          </div>
+        </div>
+        <div class="skill-group">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-logo">
+          <div>
+            <div class="skill-title">Programming Languages</div>
+            <ul class="skill-list">
+              <li>C, Python, Java (basics)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Internship Section -->
+    <div class="section">
+      <div class="section-title">Internship Experience</div>
+      <div class="timeline">
+        <div class="timeline-entry">
+          <div class="timeline-title">Verzeo – Machine Learning with Python (Remote)</div>
+          <div class="timeline-date">Sep 2022 – Nov 2022</div>
+          <ul class="timeline-list">
+            <li>Designed and deployed machine learning models using Python (scikit-learn, Pandas, NumPy) for advanced data preprocessing, feature engineering, and model evaluation.</li>
+            <li>Applied supervised and unsupervised algorithms (linear regression, decision trees, clustering) for robust data analytics and insights.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Project Section -->
+    <div class="section">
+      <div class="section-title">Capstone Project</div>
+      <div class="timeline">
+        <div class="timeline-entry">
+          <div class="timeline-title">Deploying WebApp into Monolithic Architecture</div>
+          <div class="timeline-date">Academic Project</div>
+          <div class="timeline-desc">
+            <div class="terminal">
+              <b>Description:</b> Engineered a full-stack deployment pipeline for a Tomcat-based web application, leveraging modern DevOps and cloud automation.
+            </div>
+            <ul class="timeline-list">
+              <li>Provisioned AWS infrastructure using Terraform and automated software delivery via Jenkins CI/CD pipelines.</li>
+              <li>Configured robust Jenkins master-slave architecture for workload orchestration and deployment automation.</li>
+              <li>Deployed the application to Tomcat application server in a monolithic environment.</li>
+              <li>Utilized AWS S3 for artifact storage and version control.</li>
+              <li>Leveraged Ansible for post-deployment configuration management and service orchestration.</li>
+              <li>Implemented GitHub webhooks for seamless integration and real-time deployment triggers.</li>
+              <li>Enabled end-to-end system monitoring with Prometheus and Grafana dashboards for performance metrics and uptime analytics.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Personal Details Section -->
+    <div class="section">
+      <div class="section-title">Personal Details</div>
+      <ul class="personal-list">
+        <li><b>Permanent Address:</b> Andhra Pradesh, Eluru, NTR Colony</li>
+        <li><b>Date of Birth:</b> 19/11/2002</li>
+        <li><b>Languages Known:</b> Telugu, English</li>
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; 2025 Lokesh K — Designed with <span style="color:var(--accent);font-weight:bold;">&#9733;</span> DevOps expertise and innovation.
+    </div>
+  </div>
+</body>
+</html>
